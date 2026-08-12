@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOTOAVENTURA | Equipamiento motero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="logo.css" />
+  <link rel="stylesheet" href="forms.css" />
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="admin-session.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="MotoAventura inicio"><img src="logo-motoaventura.jpeg" alt="Logo MotoAventura"><strong>MOTOAVENTURA</strong></a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#productos">Productos</a><a href="#promociones">Promociones</a><a href="#marcas">Marcas</a><a href="#contacto">Contacto</a>
+    </nav>
+    <div class="header-actions"><button class="icon-button" id="searchToggle" aria-label="Buscar">⌕</button><button class="text-button" id="loginBtn">Iniciar sesión</button><button class="text-button admin-link" id="adminBtn">Administrar</button><button class="cart-button" id="cartBtn">Carrito <b id="cartCount">0</b></button></div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow">EQUIPAMIENTO PARA GRANDES RUTAS</p><h1>Tu próxima ruta<br><em>empieza aquí.</em></h1><p>Indumentaria, equipaje y accesorios para viajar con seguridad, comodidad y estilo.</p><div class="hero-actions"><a class="primary-button" href="#productos">Ver productos</a><a class="secondary-button" href="#probar">Conoce PROBAR ↗</a></div></div>
+      <div class="hero-card"><span>01 / 03</span><div><small>NUEVA COLECCIÓN</small><strong>Preparados para lo que sigue.</strong></div></div>
+    </section>
+
+    <section class="promo-strip" id="promociones"><div><span class="eyebrow">PROMOCIÓN DE LA SEMANA</span><h2>Hasta 20% de descuento en equipamiento seleccionado.</h2></div><a class="secondary-button" href="#productos">Ver ofertas ↗</a></section>
+
+    <section class="section" id="productos"><div class="section-head"><div><p class="eyebrow">SELECCIÓN MOTOAVENTURA</p><h2>Encuentra tu equipo</h2></div><div class="filters"><button class="filter active" data-filter="Todos">Todos</button><button class="filter" data-filter="Indumentaria">Indumentaria</button><button class="filter" data-filter="Equipaje">Equipaje</button><button class="filter" data-filter="Accesorios">Accesorios</button></div></div><div class="product-grid" id="productGrid"></div></section>
+
+    <section class="try-section" id="probar"><div class="try-copy"><p class="eyebrow">UNA FORMA DISTINTA DE ELEGIR</p><h2>Prueba antes de decidir.</h2><p>Sube una foto tuya o de tu motocicleta y mira cómo se vería el producto en tu contexto. La función PROBAR será el corazón de nuestra experiencia de compra.</p><button class="primary-button" id="tryLandingBtn">Probar un producto ↗</button></div><div class="try-visual"><div class="try-orbit"></div><span>PROBAR</span></div></section>
+
+    <section class="section brands-section" id="marcas"><div class="section-head"><div><p class="eyebrow">MARCAS CON LAS QUE RODAMOS</p><h2>Confianza en cada kilómetro</h2></div></div><div class="brand-row"><span>AGV</span><span>DAINESE</span><span>ALPINESTARS</span><span>LS2</span><span>GIVI</span><span>SW-MOTECH</span></div></section>
+
+    <section class="testimonials section"><div class="section-head"><div><p class="eyebrow">COMUNIDAD MOTOAVENTURA</p><h2>Historias que siguen avanzando</h2></div></div><div class="quote-grid"><article><p>“Encontré la casaca para mi viaje al sur y pude revisar cada detalle antes de comprar.”</p><strong>— Carlos M., Lima</strong></article><article><p>“La idea de probar el equipamiento con una foto hace que comprar online se sienta mucho más seguro.”</p><strong>— Andrea R., Arequipa</strong></article><article><p>“Buen catálogo, información clara y productos pensados para quienes realmente salen a rodar.”</p><strong>— Luis P., Cusco</strong></article></div></section>
+  </main>
+
+  <footer id="contacto"><div class="footer-main"><div class="brand footer-brand"><span>MA</span><strong>MOTOAVENTURA</strong><p>Equipamiento para quienes eligen el camino largo.</p></div><div><small>VISÍTANOS</small><p>Av. La Ruta 245, Miraflores<br>Lima, Perú</p></div><div><small>ESCRÍBENOS</small><p>hola@motoaventura.pe<br>+51 999 888 777</p></div><div><small>SÍGUENOS</small><p><a href="#">Instagram</a><br><a href="#">TikTok</a></p></div></div><div class="footer-bottom"><span>© 2026 MotoAventura</span><span>Privacidad · Términos · Cambios y devoluciones</span></div></footer>
+
+  <div class="search-panel" id="searchPanel"><input id="searchInput" placeholder="Buscar casacas, equipaje, accesorios..." /></div>
+  <dialog id="productDialog"><button class="dialog-close" data-close>×</button><div id="productDetail"></div></dialog>
+  <dialog id="authDialog"><button class="dialog-close" data-close>×</button><div class="dialog-content"><p class="eyebrow">ACCESO MOTOAVENTURA</p><h2 id="authTitle">Tu cuenta, a tu ritmo.</h2><p>Inicia sesión o crea una cuenta. También puedes comprar como invitado.</p><form id="authForm" class="simple-form"><div id="registerFields" hidden><label>Nombres<input id="registerFirstName" placeholder="Nombres"></label><label>Apellidos<input id="registerLastName" placeholder="Apellidos"></label></div><label>Correo electrónico<input id="authEmail" type="email" required placeholder="tu correo@email.com"></label><label>Contraseña<input id="authPassword" type="password" required placeholder="••••••••"></label><button class="primary-button full" id="authSubmit">Iniciar sesión</button></form><button class="text-button" id="registerBtn">Crear una cuenta</button><button class="text-button" id="guestBtn">Continuar como invitado</button></div></dialog>
+  <dialog id="checkoutDialog"><button class="dialog-close" data-close>×</button><div class="dialog-content"><p class="eyebrow">FINALIZAR COMPRA</p><h2>Un último paso.</h2><form id="checkoutForm" class="simple-form"><div class="form-row"><label>Nombres<input required placeholder="Nombres"></label><label>Apellidos<input required placeholder="Apellidos"></label></div><label>Dirección de entrega<input required placeholder="Av. / Jr. / Calle y número"></label><div class="form-row"><label>Distrito<input required placeholder="Miraflores"></label><label>Teléfono<input required placeholder="999 888 777"></label></div><label>Método de pago<select><option>Pago simulado - prototipo</option><option>Yape / Plin - próximo</option><option>Tarjeta - próximo</option></select></label><button class="primary-button full">Confirmar pedido</button></form></div></dialog>
+  <dialog id="adminDialog"><button class="dialog-close" data-close>×</button><div class="dialog-content admin-content"><div class="admin-top"><div><p class="eyebrow">ACCESO ESPECIAL</p><h2>Administrar catálogo.</h2></div><button class="finish-button" id="finishAdmin">Finalizar sesión</button></div><form id="adminForm" class="simple-form"><label>Nombre del producto<input id="adminName" required placeholder="Ej. Casaca Andina Pro"></label><div class="form-row"><label>Categoría<select id="adminCategory"><option>Indumentaria</option><option>Equipaje</option><option>Accesorios</option><option>Guantes</option><option>Protección</option></select></label><label>Precio<input id="adminPrice" type="number" min="0" required placeholder="0.00"></label></div><label>Descripción<input id="adminDesc" required placeholder="Descripción breve"></label><button class="primary-button full">Agregar producto</button></form><div class="admin-list" id="adminList"></div><div class="admin-orders"><h3>Pedidos recibidos</h3><div class="admin-list" id="orderList"><p>Los pedidos aparecerán aquí.</p></div></div></div></dialog>
+  <dialog id="adminAuthDialog"><button class="dialog-close" data-close>×</button><div class="dialog-content"><p class="eyebrow">ZONA RESTRINGIDA</p><h2>Acceso administrador.</h2><p>Esta sección está reservada para el equipo encargado del catálogo.</p><form id="adminAuthForm" class="simple-form"><label>Correo de administrador<input id="adminEmail" type="email" required placeholder="admin@motoaventura.pe"></label><label>Contraseña<input id="adminPassword" type="password" required placeholder="Contraseña"></label><button class="primary-button full">Ingresar al panel</button></form></div></dialog>
+  <dialog id="tryDialog"><button class="dialog-close" data-close>×</button><div class="dialog-content"><p class="eyebrow">PROBAR CON IA</p><h2 id="tryTitle">Mira cómo se vería contigo.</h2><p>Elige qué deseas probar y sube una fotografía clara.</p><label>Tipo de prueba<select id="tryMode"><option value="person">Indumentaria sobre mí</option><option value="motorcycle">Accesorio sobre mi motocicleta</option></select></label><label class="upload-box"><input type="file" id="tryFile" accept="image/*"/><span>＋</span><strong id="tryUploadLabel">Sube una foto tuya</strong><small>JPG o PNG · máximo 10 MB</small></label><button class="primary-button" id="processTry">Generar vista previa</button><div id="tryResult"></div></div></dialog>
+  <aside class="cart-drawer" id="cartDrawer"><div class="drawer-head"><h2>Tu carrito</h2><button data-close-cart>×</button></div><div id="cartItems"></div><div class="cart-total"><span>Total</span><strong id="cartTotal">S/ 0.00</strong></div><button class="primary-button full" id="checkoutBtn">Continuar con la compra</button></aside>
+  <div class="toast" id="toast"></div>
+  <script src="app.js?v=20260809-2"></script>
+</body>
+</html>

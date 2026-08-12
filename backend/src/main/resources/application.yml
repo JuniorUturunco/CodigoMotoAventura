@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/motoaventura}
+    username: ${DATABASE_USER:postgres}
+    password: ${DATABASE_PASSWORD:admin123}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+server:
+  port: ${PORT:8080}
+motoaventura:
+  replicate-token: ${REPLICATE_API_TOKEN:}
+  replicate-model: ${REPLICATE_MODEL:cuuupid/idm-vton}
+  garment-url: ${GARMENT_IMAGE_URL:}
+  cloudinary-url: ${CLOUDINARY_URL:}
